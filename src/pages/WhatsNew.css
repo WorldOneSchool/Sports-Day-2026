@@ -1,191 +1,215 @@
-/* WhatsNew.css — kept the improved layout and model viewport; added control styles */
+/* WhatsNew.css — Crystal UI with mobile portrait (vertical) Bento cards
+   Desktop/tablet styles preserved. Mobile (<=480px) shows tall portrait cards
+   stacked in a 2-column grid that uses the full screen.
+*/
 
-/* (top-level layout — same as previous tuned styles) */
-.whats-new-page {
-  padding: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(180, 120, 80, 0.03) 0%,
-    rgba(200, 140, 100, 0.02) 50%,
-    rgba(180, 120, 80, 0.02) 100%
-  );
-  color: #1d1d1f;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+/* ---------- Theme / shared rules (desktop & tablet unchanged) ---------- */
+:root{
+  --glass-bg: rgba(255,255,255,0.55);
+  --muted: #6f6f75;
+  --accent: #0abf8f;
+  --card-radius: 22px;
+  --grid-gap: 28px;
+  --page-padding-desktop: 34px 36px;
+  --page-padding-mobile: 12px 12px;
 }
 
-.whats-new-wrapper {
-  display: flex;
-  gap: 0;
-  height: 100vh;
+/* Page container */
+.whats-new-crystal {
+  min-height: 100vh;
+  padding: var(--page-padding-desktop);
+  box-sizing: border-box;
+  font-family: -apple-system, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #07101a;
+  background: transparent;
+}
+
+/* Header */
+.crystal-header { margin-bottom: 22px; padding-left: 6px; }
+.crystal-title { margin: 0; font-weight: 900; font-size: clamp(34px,5.6vw,56px); color: #051018; }
+.crystal-sub { margin-top:8px; color: var(--muted); font-weight:600; }
+
+/* Grid (desktop default: 3 cols) */
+.crystal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
   width: 100%;
   align-items: stretch;
+  box-sizing: border-box;
+  padding: 6px;
 }
 
-.whats-left {
-  width: 44%;
-  min-width: 360px;
-  height: 100%;
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 24px;
-  overflow-y: auto;
-  background: rgba(250, 250, 251, 0.98);
-  border-right: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 4px 30px rgba(13, 13, 14, 0.02);
-}
-
-.banner-section { gap: 12px; padding-top: 6px; }
-.arena-title { font-size: 64px; font-weight: 900; letter-spacing: -2px; margin: 0; color: #111; }
-
-/* Info card, stadium list, etc. kept as before (condensed for brevity) */
-.info-cards-grid { margin-top: 8px; }
-.info-card { padding: 18px 22px; border-radius: 14px; display:flex; gap:16px; align-items:center; background:#fff; box-shadow:0 8px 18px rgba(11,12,13,0.04); border:1px solid rgba(15,15,20,0.03); }
-.card-icon{font-size:32px;min-width:44px}
-.card-label{font-size:11px;color:#7a7a80;font-weight:800;text-transform:uppercase;margin:0}
-.card-value{font-size:18px;font-weight:800;margin:0}
-
-/* Stadium list */
-.stadiums-section { margin-top: 6px; }
-.section-title { font-size:12px; font-weight:900; color:#007aff; margin:0 0 6px 0; }
-.stadium-list { display:flex; flex-direction:column; gap:12px; max-height: calc(100vh - 360px); overflow-y:auto; padding-right:8px; }
-.stadium-item { padding:14px 18px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(11,12,13,0.03); border:1px solid rgba(12,12,13,0.03); }
-.stadium-header { display:flex; gap:12px; align-items:center; margin-bottom:6px; }
-.stadium-icon{font-size:20px} .stadium-name{font-weight:800} .stadium-desc{font-size:13px;color:#7a7a80;padding-left:40px;margin:0}
-
-/* Right panel */
-.whats-right { width:56%; height:100%; display:flex; align-items:center; justify-content:center; padding:34px; position:relative; background: linear-gradient(180deg, rgba(235,230,225,0.4), rgba(240,236,232,0.4)); }
-
-.model-showcase { width:100%; max-width:1200px; height:100%; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; }
-
-.model-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: calc(100vh - 120px);
-  border-radius: 14px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #f8f9fa, #eef2f5);
-  box-shadow: 0 18px 48px rgba(11, 12, 13, 0.08);
-  border: 1px solid rgba(10, 10, 12, 0.03);
+/* Card base (desktop/tablet) */
+.crystal-card {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:18px 22px;
+  border-radius: var(--card-radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(250,250,252,0.74));
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 30px 70px rgba(3,8,18,0.12);
+  cursor:pointer;
+  transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s;
+  min-height: 110px;
   position: relative;
-  display: block;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
 }
 
-/* ensure model-viewer fills the frame */
-.model-frame model-viewer {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* sheen + inner shadow */
+.crystal-card::before { content:""; position:absolute; inset:0; border-radius:inherit; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -10px 30px rgba(7,10,14,0.06); pointer-events:none; }
+.crystal-card::after { content:""; position:absolute; left:-40%; top:-30%; width:80%; height:160%; transform:rotate(18deg); background: linear-gradient(120deg, rgba(255,255,255,0.28), rgba(255,255,255,0.04)); opacity:0; transition: transform .52s, opacity .26s; pointer-events:none; }
+.crystal-card:hover::after { transform:rotate(18deg) translateX(22%); opacity:1; }
+
+/* Left content */
+.card-left { display:flex; gap:14px; align-items:center; min-width:0; }
+.card-icon { width:72px; height:72px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:34px; background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(245,245,247,0.9)); border:1px solid rgba(255,255,255,0.5); box-shadow:0 6px 18px rgba(3,8,18,0.06); flex-shrink:0; }
+.card-text { display:flex; flex-direction:column; min-width:0; }
+.card-title { font-weight:800; font-size:16px; color:#071018; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.card-desc { margin-top:6px; font-size:13px; color:var(--muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Right content */
+.card-right { display:flex; align-items:center; justify-content:center; gap:12px; flex-direction:column; }
+.view-chip { min-width:72px; padding:10px 12px; border-radius:12px; background: linear-gradient(180deg, rgba(245,255,250,0.95), rgba(230,255,245,0.9)); color:var(--accent); font-weight:900; font-size:13px; box-shadow:0 6px 18px rgba(10,160,120,0.06); border:1px solid rgba(10,160,120,0.12); }
+
+/* Modal base (unchanged) */
+.crystal-modal-backdrop { position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; background: linear-gradient(180deg, rgba(10,12,14,0.64), rgba(6,8,10,0.78)); padding:20px; }
+.crystal-modal { width:min(1200px,96vw); height:min(720px,92vh); background: linear-gradient(180deg, rgba(8,12,18,0.96), rgba(4,8,12,0.98)); border-radius:16px; overflow:hidden; position:relative; box-shadow:0 60px 160px rgba(0,0,0,0.7); display:flex; flex-direction:column; }
+.crystal-modal-header { position:absolute; top:0; left:0; right:0; height:64px; display:flex; align-items:center; justify-content:space-between; padding:10px 18px; z-index:60; background: rgba(255,255,255,0.02); -webkit-backdrop-filter: blur(6px) saturate(120%); backdrop-filter: blur(6px) saturate(120%); }
+.crystal-close { background: rgba(255,255,255,0.06); color:#fff; border:none; font-size:1.1rem; border-radius:10px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.crystal-model-frame { position:absolute; top:64px; left:0; right:0; bottom:0; overflow:hidden; background:#000; }
+.crystal-model-frame model-viewer, .crystal-model-frame iframe { width:100%; height:100%; display:block; background:#000; border:none; }
+
+/* control button */
+.control-btn { background: rgba(255,255,255,0.95); color:#111; padding:8px 12px; border-radius:10px; border:1px solid rgba(10,10,12,0.06); font-weight:700; cursor:pointer; box-shadow:0 8px 20px rgba(11,12,13,0.06); }
+
+/* -----------------------
+   Responsive adjustments
+   ----------------------- */
+
+/* Tablet: 2 columns */
+@media (max-width:1360px) {
+  .crystal-grid { grid-template-columns: repeat(2, 1fr); gap:22px; }
 }
 
-/* overlay for subtle lighting effect */
-.model-overlay { position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)); z-index:2; border-radius:14px; }
-
-/* Model controls overlay (top-left of frame) */
-.model-controls {
-  position: absolute;
-  left: 14px;
-  top: 14px;
-  display: flex;
-  gap: 8px;
-  z-index: 12;
+/* Small desktops / tablets: 1 column */
+@media (max-width:800px) and (min-width:481px) {
+  .crystal-grid { grid-template-columns: 1fr; gap:18px; }
 }
 
-.control-btn {
-  background: rgba(255,255,255,0.95);
-  color: #111;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(10,10,12,0.06);
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(11,12,13,0.06);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
+/* ============================
+   MOBILE: Portrait Bento Cards
+   <= 480px
+   - Two columns
+   - Each card is a tall portrait rectangle
+   - Cards use the full screen width with minimal page padding
+   ============================ */
+@media (max-width:480px) {
+  /* Use almost full-screen; small padding */
+  .whats-new-crystal { padding: 8px 10px; }
 
-.control-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(11,12,13,0.08); }
-
-.control-btn.active {
-  border-color: rgba(0,122,255,0.18);
-  color: #0051d5;
-  background: linear-gradient(90deg, rgba(0,122,255,0.06), rgba(0,122,255,0.03));
-}
-
-/* badge 360 (bottom-right inside frame) */
-.badge-360 { position:absolute; right:40px; bottom:40px; background:rgba(255,255,255,0.95); color:#007aff; padding:10px 14px; border-radius:22px; font-weight:800; font-size:13px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 12px 30px rgba(11,12,13,0.08); border:1px solid rgba(0,122,255,0.12); z-index:8; backdrop-filter:blur(6px); }
-
-.rotate-icon { display:inline-block; animation:spin 14s linear infinite; font-size:14px; }
-@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-
-/* responsive */
-@media (max-width: 1100px) {
-  .whats-new-wrapper { flex-direction: column; height: auto; }
-  .whats-left, .whats-right { width: 100%; padding: 28px; }
-  .model-frame { aspect-ratio: 4 / 3; max-height: 60vh; margin-top: 10px; }
-  .arena-title { font-size: 44px; }
-}
-
-@media (max-width: 768px) {
-  .mobile-model-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99999;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  /* 2 columns: equal width; small gap */
+  .crystal-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: start;
   }
 
-  .mobile-model-frame {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  /* Make each card a tall portrait rectangle */
+  .crystal-card {
+    flex-direction: column;           /* stack vertically */
+    align-items: stretch;             /* let content stretch horizontally */
+    justify-content: space-between;   /* push view-chip to bottom */
+    padding: 14px;
+    min-height: 170px;                /* tall portrait */
+    height: 170px;                    /* consistent height for bento feel */
+    border-radius: 14px;
+    gap: 10px;
   }
 
-  .mobile-model-frame iframe,
-  .mobile-model-frame model-viewer {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .close-modal-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100000;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border: none;
-    font-size: 2.5rem;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    display: flex;
+  /* Top area: icon + title stacked horizontally in a small row */
+  .card-left {
+    flex-direction: row;              /* keep icon and text side-by-side at top */
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    padding-bottom: 6px;
   }
 
-  .close-modal-btn:hover {
-    background: rgba(0, 0, 0, 0.95);
+  /* enlarge the icon but keep it compact */
+  .card-icon {
+    width:56px;
+    height:56px;
+    font-size:22px;
+    border-radius:12px;
+    flex-shrink:0;
   }
-}
 
-@media (max-width: 680px) {
-  .arena-title { font-size: 36px; }
-  .control-btn { padding: 6px 10px; font-size: 13px; }
-  .badge-360 { right: 16px; bottom: 16px; padding: 8px 12px; font-size: 12px; }
+  /* Title and desc are stacked and centered-left but allowed two lines */
+  .card-text {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    min-width:0;
+  }
+  .card-title {
+    font-size:15px;
+    line-height:1.05;
+    font-weight:800;
+    color:#051018;
+    -webkit-line-clamp:2;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:normal;
+  }
+  .card-desc {
+    font-size:13px;
+    color:var(--muted);
+    margin-top:6px;
+    -webkit-line-clamp:2;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  /* Move the view chip to the bottom right area of the card */
+  .card-right {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    width:100%;
+    padding-top:4px;
+  }
+  .view-chip {
+    min-width:64px;
+    padding:8px 10px;
+    font-size:13px;
+    border-radius:10px;
+    align-self:flex-end;
+    margin-left:auto;
+    box-shadow: 0 6px 18px rgba(10,160,120,0.06);
+  }
+
+  /* reduce sheen intensity on small devices slightly */
+  .crystal-card::after { opacity: 0.85; transform: rotate(18deg) translateX(8%); }
+
+  /* Modal full-screen */
+  .crystal-modal { width:100vw; height:100vh; border-radius:0; }
+  .crystal-modal-header { height: calc(56px + env(safe-area-inset-top, 12px)); padding-top: env(safe-area-inset-top, 12px); }
+  .crystal-model-frame { top: calc(56px + env(safe-area-inset-top, 12px)); }
+
+  /* tiny phones: slightly decrease card height to fit more rows */
+  @media (max-width:360px) {
+    .crystal-card { min-height:150px; height:150px; padding:12px; gap:8px; }
+    .card-icon { width:50px; height:50px; font-size:20px; }
+    .card-title { font-size:14px; }
+    .view-chip { min-width:56px; padding:7px 9px; font-size:12px; }
+    .whats-new-crystal { padding: 6px 8px; }
+    .crystal-grid { gap:8px; }
+  }
 }

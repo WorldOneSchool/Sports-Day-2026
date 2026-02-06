@@ -1,0 +1,48 @@
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 10% 20%, rgba(255,200,120,0.12), transparent 10%),
+    radial-gradient(ellipse at 90% 80%, rgba(120,200,255,0.10), transparent 10%),
+    linear-gradient(120deg, rgba(80,45,200,0.12), rgba(120,80,220,0.08));
+  z-index: -3;
+  pointer-events: none;
+  animation: auroraShift 12s ease-in-out infinite alternate;
+}
+
+.aurora-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.aurora-orbs .orb {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.7;
+  transform: translate3d(0,0,0);
+}
+
+.aurora-orbs .o1 { background: rgba(255,120,90,0.25); left: 8%; top: 20%; animation: float1 8s ease-in-out infinite; }
+.aurora-orbs .o2 { background: rgba(90,180,255,0.22); right: 10%; top: 10%; animation: float2 9s ease-in-out infinite; }
+.aurora-orbs .o3 { background: rgba(120,255,160,0.20); left: 30%; bottom: 12%; animation: float3 11s ease-in-out infinite; }
+.aurora-orbs .o4 { background: rgba(220,120,255,0.18); right: 28%; bottom: 22%; width: 180px; height: 180px; animation: float4 10s ease-in-out infinite; }
+
+.aurora-content h2 { letter-spacing: 0.6px; text-transform: none; }
+.aurora-content p { color: #111; line-height: 1.6; }
+
+@keyframes auroraShift {
+  0% { transform: scale(1) translateY(0); filter: hue-rotate(0deg); }
+  100% { transform: scale(1.02) translateY(-6px); filter: hue-rotate(15deg); }
+}
+
+@keyframes float1 { 0% { transform: translateY(0) translateX(0);} 50% { transform: translateY(-18px) translateX(10px);} 100% { transform: translateY(0) translateX(0);} }
+@keyframes float2 { 0% { transform: translateY(0) translateX(0);} 50% { transform: translateY(-26px) translateX(-14px);} 100% { transform: translateY(0) translateX(0);} }
+@keyframes float3 { 0% { transform: translateY(0) translateX(0);} 50% { transform: translateY(-22px) translateX(18px);} 100% { transform: translateY(0) translateX(0);} }
+@keyframes float4 { 0% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-30px) rotate(6deg);} 100% { transform: translateY(0) rotate(0deg);} }
+
+/* keep content readable on top */
+.aurora-content { position: relative; z-index: 1; }

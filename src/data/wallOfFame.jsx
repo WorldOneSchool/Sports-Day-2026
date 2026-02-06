@@ -10,7 +10,7 @@ const wallOfFame = [
   { name: "Ansh", achievement: "Taekwondo U-17 — Bronze Medal" },
   { name: "Ahmed", achievement: "Taekwondo U-14 — Bronze Medal" },
   { name: "Gouri", achievement: "Taekwondo U-12 — Bronze Medal (SFA)" },
-  { name: "Aarandhana", achievement: "Chess U-10 — Gold Medal" },
+  { name: "Aaradhana", achievement: "Chess U-10 — Gold Medal" },
 ];
 
 export default wallOfFame;
