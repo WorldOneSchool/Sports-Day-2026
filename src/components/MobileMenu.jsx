@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import "../App.css";
-import "../mobile-overrides.css"; // <-- new import
+import "../mobile-overrides.css";
 
 export default function MobileMenu({ open, onClose, links = [] }) {
   const shouldReduceMotion = useReducedMotion();

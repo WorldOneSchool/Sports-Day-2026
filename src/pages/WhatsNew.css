@@ -1,0 +1,191 @@
+/* WhatsNew.css — kept the improved layout and model viewport; added control styles */
+
+/* (top-level layout — same as previous tuned styles) */
+.whats-new-page {
+  padding: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(180, 120, 80, 0.03) 0%,
+    rgba(200, 140, 100, 0.02) 50%,
+    rgba(180, 120, 80, 0.02) 100%
+  );
+  color: #1d1d1f;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.whats-new-wrapper {
+  display: flex;
+  gap: 0;
+  height: 100vh;
+  width: 100%;
+  align-items: stretch;
+}
+
+.whats-left {
+  width: 44%;
+  min-width: 360px;
+  height: 100%;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+  overflow-y: auto;
+  background: rgba(250, 250, 251, 0.98);
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 30px rgba(13, 13, 14, 0.02);
+}
+
+.banner-section { gap: 12px; padding-top: 6px; }
+.arena-title { font-size: 64px; font-weight: 900; letter-spacing: -2px; margin: 0; color: #111; }
+
+/* Info card, stadium list, etc. kept as before (condensed for brevity) */
+.info-cards-grid { margin-top: 8px; }
+.info-card { padding: 18px 22px; border-radius: 14px; display:flex; gap:16px; align-items:center; background:#fff; box-shadow:0 8px 18px rgba(11,12,13,0.04); border:1px solid rgba(15,15,20,0.03); }
+.card-icon{font-size:32px;min-width:44px}
+.card-label{font-size:11px;color:#7a7a80;font-weight:800;text-transform:uppercase;margin:0}
+.card-value{font-size:18px;font-weight:800;margin:0}
+
+/* Stadium list */
+.stadiums-section { margin-top: 6px; }
+.section-title { font-size:12px; font-weight:900; color:#007aff; margin:0 0 6px 0; }
+.stadium-list { display:flex; flex-direction:column; gap:12px; max-height: calc(100vh - 360px); overflow-y:auto; padding-right:8px; }
+.stadium-item { padding:14px 18px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(11,12,13,0.03); border:1px solid rgba(12,12,13,0.03); }
+.stadium-header { display:flex; gap:12px; align-items:center; margin-bottom:6px; }
+.stadium-icon{font-size:20px} .stadium-name{font-weight:800} .stadium-desc{font-size:13px;color:#7a7a80;padding-left:40px;margin:0}
+
+/* Right panel */
+.whats-right { width:56%; height:100%; display:flex; align-items:center; justify-content:center; padding:34px; position:relative; background: linear-gradient(180deg, rgba(235,230,225,0.4), rgba(240,236,232,0.4)); }
+
+.model-showcase { width:100%; max-width:1200px; height:100%; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; }
+
+.model-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 120px);
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8f9fa, #eef2f5);
+  box-shadow: 0 18px 48px rgba(11, 12, 13, 0.08);
+  border: 1px solid rgba(10, 10, 12, 0.03);
+  position: relative;
+  display: block;
+}
+
+/* ensure model-viewer fills the frame */
+.model-frame model-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* overlay for subtle lighting effect */
+.model-overlay { position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)); z-index:2; border-radius:14px; }
+
+/* Model controls overlay (top-left of frame) */
+.model-controls {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 12;
+}
+
+.control-btn {
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(10,10,12,0.06);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(11,12,13,0.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.control-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(11,12,13,0.08); }
+
+.control-btn.active {
+  border-color: rgba(0,122,255,0.18);
+  color: #0051d5;
+  background: linear-gradient(90deg, rgba(0,122,255,0.06), rgba(0,122,255,0.03));
+}
+
+/* badge 360 (bottom-right inside frame) */
+.badge-360 { position:absolute; right:40px; bottom:40px; background:rgba(255,255,255,0.95); color:#007aff; padding:10px 14px; border-radius:22px; font-weight:800; font-size:13px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 12px 30px rgba(11,12,13,0.08); border:1px solid rgba(0,122,255,0.12); z-index:8; backdrop-filter:blur(6px); }
+
+.rotate-icon { display:inline-block; animation:spin 14s linear infinite; font-size:14px; }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+/* responsive */
+@media (max-width: 1100px) {
+  .whats-new-wrapper { flex-direction: column; height: auto; }
+  .whats-left, .whats-right { width: 100%; padding: 28px; }
+  .model-frame { aspect-ratio: 4 / 3; max-height: 60vh; margin-top: 10px; }
+  .arena-title { font-size: 44px; }
+}
+
+@media (max-width: 768px) {
+  .mobile-model-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .mobile-model-frame {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .mobile-model-frame iframe,
+  .mobile-model-frame model-viewer {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .close-modal-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .close-modal-btn:hover {
+    background: rgba(0, 0, 0, 0.95);
+  }
+}
+
+@media (max-width: 680px) {
+  .arena-title { font-size: 36px; }
+  .control-btn { padding: 6px 10px; font-size: 13px; }
+  .badge-360 { right: 16px; bottom: 16px; padding: 8px 12px; font-size: 12px; }
+}

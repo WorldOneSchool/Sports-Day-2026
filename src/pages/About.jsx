@@ -25,7 +25,7 @@ export default function About() {
     { title: "Vice-Chairperson", name: "Mrs.L.Rani Rudrama Dev", img: "mrs-rani.jpg" },
     { title: "Executive Director", name: "Dr.A.Sandeep Kranthi kiran", img: "dr-sandeep.jpg" },
     { title: "Principal", name: "Smt.S.Vandana", img: "smt-vandana.jpg" },
-    { title: "Vice-Principal", name: "Ms.Ramya", img: "ms-ramya.jpg" },
+    { title: "Vice-Principal", name: "Ms.Ramya ", img: "ms-ramya.jpg" },
   ];
 
   const pdfs = [

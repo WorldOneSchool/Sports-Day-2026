@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "../components/PageContainer";
-import sportsBg from "../assets/sports.jpg";
+import sportsBg from "../assets/sports.png";
 import ScrollReveal from "../components/ScrollReveal";
 import wallOfFame from "../data/wallOfFame";
 import "./WallOfFame.css"; // added

@@ -6,7 +6,6 @@ import "../App.css";
 import "./Navbar.css";
 import logo from "../assets/logos/School-logo.png";
 
-
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/why-sports-day", label: "Why We Celebrate Sports Day" },

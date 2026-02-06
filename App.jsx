@@ -1,7 +1,7 @@
 /* Single-file React app (JSX compiled with Babel in browser).
    No build step required. */
-import { useState, useEffect } from "react";
 
+const { useState, useEffect, useRef } = React;
 
 /* Utility: Intersection observer hook for reveal on scroll */
 function useReveal(refSelector, options = {}) {
@@ -261,4 +261,4 @@ function App(){
 }
 
 /* Render */
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
