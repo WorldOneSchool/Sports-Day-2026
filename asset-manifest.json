@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Sports-Day-2026/static/css/main.0693f279.css",
+    "main.js": "/Sports-Day-2026/static/js/main.7d19904e.js",
+    "static/media/GOPR3995.JPG": "/Sports-Day-2026/static/media/GOPR3995.3567e7d9078f7aa65414.JPG",
+    "static/media/GOPR4003.JPG": "/Sports-Day-2026/static/media/GOPR4003.2400915eb061dc70c874.JPG",
+    "static/media/GOPR3992.JPG": "/Sports-Day-2026/static/media/GOPR3992.c6b0112a9a0b638be2ca.JPG",
+    "static/media/GOPR3988.JPG": "/Sports-Day-2026/static/media/GOPR3988.80ff44637ddf660646c4.JPG",
+    "static/media/GOPR4000.JPG": "/Sports-Day-2026/static/media/GOPR4000.69701d0f5ba13d9d9374.JPG",
+    "static/media/GOPR3996.JPG": "/Sports-Day-2026/static/media/GOPR3996.e6c88ac4d3312a96472b.JPG",
+    "static/media/GOPR3986.JPG": "/Sports-Day-2026/static/media/GOPR3986.da2cd8f17d9326b454b7.JPG",
+    "static/media/GOPR3994.JPG": "/Sports-Day-2026/static/media/GOPR3994.d2b167c442294608c61f.JPG",
+    "static/media/GOPR3945.JPG": "/Sports-Day-2026/static/media/GOPR3945.868b4adc15882cb2c1b9.JPG",
+    "static/media/GOPR3944.JPG": "/Sports-Day-2026/static/media/GOPR3944.feed63ea76e60f743e68.JPG",
+    "static/media/GOPR3985.JPG": "/Sports-Day-2026/static/media/GOPR3985.f24c2d0e636367245f4d.JPG",
+    "static/media/GOPR3989.JPG": "/Sports-Day-2026/static/media/GOPR3989.3dbdb48d3a83e2f7ad5b.JPG",
+    "static/media/about.png": "/Sports-Day-2026/static/media/about.dfe5f25f4145bc54f3df.png",
+    "static/media/behind.png": "/Sports-Day-2026/static/media/behind.20a6f0b839ed344c90d7.png",
+    "static/media/landing.png": "/Sports-Day-2026/static/media/landing.0f6fb6747f9430141308.png",
+    "static/media/sports.png": "/Sports-Day-2026/static/media/sports.f882c8a8959aaa3d8486.png",
+    "static/media/why.png": "/Sports-Day-2026/static/media/why.734da98e6da2d1450772.png",
+    "static/media/dr-lavu.jpg": "/Sports-Day-2026/static/media/dr-lavu.8da9626717d326246517.jpg",
+    "static/media/smt-vandana.jpg": "/Sports-Day-2026/static/media/smt-vandana.015837581ceaecdfcab3.jpg",
+    "static/media/School-logo.png": "/Sports-Day-2026/static/media/School-logo.df2d39fc8135328f9f4f.png",
+    "static/media/dr-sandeep.jpg": "/Sports-Day-2026/static/media/dr-sandeep.aece2bcd573aa8c5337b.jpg",
+    "index.html": "/Sports-Day-2026/index.html",
+    "main.0693f279.css.map": "/Sports-Day-2026/static/css/main.0693f279.css.map",
+    "main.7d19904e.js.map": "/Sports-Day-2026/static/js/main.7d19904e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0693f279.css",
+    "static/js/main.7d19904e.js"
+  ]
+}
