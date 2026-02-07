@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Sports-Day-2026/static/css/main.a391f035.css",
-    "main.js": "/Sports-Day-2026/static/js/main.a09e71e9.js",
-    "static/media/GOPR3995.JPG": "/Sports-Day-2026/static/media/GOPR3995.3567e7d9078f7aa65414.JPG",
-    "static/media/GOPR4003.JPG": "/Sports-Day-2026/static/media/GOPR4003.2400915eb061dc70c874.JPG",
-    "static/media/GOPR3992.JPG": "/Sports-Day-2026/static/media/GOPR3992.c6b0112a9a0b638be2ca.JPG",
-    "static/media/GOPR3988.JPG": "/Sports-Day-2026/static/media/GOPR3988.80ff44637ddf660646c4.JPG",
-    "static/media/GOPR4000.JPG": "/Sports-Day-2026/static/media/GOPR4000.69701d0f5ba13d9d9374.JPG",
-    "static/media/GOPR3996.JPG": "/Sports-Day-2026/static/media/GOPR3996.e6c88ac4d3312a96472b.JPG",
-    "static/media/GOPR3986.JPG": "/Sports-Day-2026/static/media/GOPR3986.da2cd8f17d9326b454b7.JPG",
-    "static/media/GOPR3994.JPG": "/Sports-Day-2026/static/media/GOPR3994.d2b167c442294608c61f.JPG",
-    "static/media/GOPR3945.JPG": "/Sports-Day-2026/static/media/GOPR3945.868b4adc15882cb2c1b9.JPG",
-    "static/media/GOPR3944.JPG": "/Sports-Day-2026/static/media/GOPR3944.feed63ea76e60f743e68.JPG",
-    "static/media/GOPR3985.JPG": "/Sports-Day-2026/static/media/GOPR3985.f24c2d0e636367245f4d.JPG",
-    "static/media/GOPR3989.JPG": "/Sports-Day-2026/static/media/GOPR3989.3dbdb48d3a83e2f7ad5b.JPG",
+    "main.js": "/Sports-Day-2026/static/js/main.3d75b233.js",
     "static/media/ms-ramya.jpg": "/Sports-Day-2026/static/media/ms-ramya.7d053e33ff32628c6f32.jpg",
     "static/media/about.png": "/Sports-Day-2026/static/media/about.dfe5f25f4145bc54f3df.png",
+    "static/media/GOPR3995.jpg": "/Sports-Day-2026/static/media/GOPR3995.a4ae9858d83f0da89eec.jpg",
+    "static/media/GOPR3945.jpg": "/Sports-Day-2026/static/media/GOPR3945.412ee4eea52e607d1735.jpg",
+    "static/media/GOPR3988.jpg": "/Sports-Day-2026/static/media/GOPR3988.967bd19a97a8e4c794e4.jpg",
+    "static/media/GOPR3992.jpg": "/Sports-Day-2026/static/media/GOPR3992.d2b55847a1d464a8c800.jpg",
     "static/media/behind.png": "/Sports-Day-2026/static/media/behind.20a6f0b839ed344c90d7.png",
+    "static/media/GOPR3944.jpg": "/Sports-Day-2026/static/media/GOPR3944.1aaaeaa8a4f175638543.jpg",
+    "static/media/GOPR3994.jpg": "/Sports-Day-2026/static/media/GOPR3994.69740eb12f92aa68310f.jpg",
+    "static/media/GOPR3986.jpg": "/Sports-Day-2026/static/media/GOPR3986.6b7da24ff463db84b65b.jpg",
+    "static/media/GOPR3985.jpg": "/Sports-Day-2026/static/media/GOPR3985.d1ac4b47f2255471690e.jpg",
+    "static/media/GOPR3998.jpg": "/Sports-Day-2026/static/media/GOPR3998.76c4d7d5d7352a5808a4.jpg",
+    "static/media/GOPR4003.jpg": "/Sports-Day-2026/static/media/GOPR4003.59d70bf6c1dc4a2bde8d.jpg",
+    "static/media/GOPR4000.jpg": "/Sports-Day-2026/static/media/GOPR4000.f57ddd27899599e2e225.jpg",
+    "static/media/GOPR3989.jpg": "/Sports-Day-2026/static/media/GOPR3989.493d4d025b273742bb26.jpg",
     "static/media/landing.png": "/Sports-Day-2026/static/media/landing.0f6fb6747f9430141308.png",
     "static/media/sports.png": "/Sports-Day-2026/static/media/sports.f882c8a8959aaa3d8486.png",
     "static/media/why.png": "/Sports-Day-2026/static/media/why.734da98e6da2d1450772.png",
@@ -26,10 +26,10 @@
     "static/media/dr-sandeep.jpg": "/Sports-Day-2026/static/media/dr-sandeep.aece2bcd573aa8c5337b.jpg",
     "index.html": "/Sports-Day-2026/index.html",
     "main.a391f035.css.map": "/Sports-Day-2026/static/css/main.a391f035.css.map",
-    "main.a09e71e9.js.map": "/Sports-Day-2026/static/js/main.a09e71e9.js.map"
+    "main.3d75b233.js.map": "/Sports-Day-2026/static/js/main.3d75b233.js.map"
   },
   "entrypoints": [
     "static/css/main.a391f035.css",
-    "static/js/main.a09e71e9.js"
+    "static/js/main.3d75b233.js"
   ]
 }

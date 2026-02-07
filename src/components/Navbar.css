@@ -57,7 +57,7 @@
 /* Make nav text/pills readable when the navbar is transparent (top) */
 .site-nav.premium-navbar:not(.scrolled) .brand-text,
 .site-nav.premium-navbar:not(.scrolled) .nav-link.premium-nav-link{
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .site-nav.premium-navbar:not(.scrolled) .nav-link.premium-nav-link{
@@ -97,8 +97,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 10px 20px;
+  gap: 12px;
+  padding: 8px 16px;
 }
 
 /* Brand */
@@ -121,8 +121,9 @@
 .brand-text.premium-brand-text{
   font-weight: 600;
   color: var(--text);
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 0.1px;
+  white-space: nowrap;
 }
 
 /* Links */
@@ -130,9 +131,11 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links.premium-nav-links li{
@@ -141,15 +144,16 @@
 
 .nav-link.premium-nav-link{
   --pad-v: 8px;
-  --pad-h: 12px;
+  --pad-h: 11px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: var(--pad-v) var(--pad-h);
-  border-radius: 12px;
+  border-radius: 11px;
   color: #000000;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
   text-decoration: none;
   transition: color 160ms ease, background 160ms ease, transform 150ms ease;
 }
@@ -206,7 +210,7 @@
 }
 
 /* Responsive: Hide nav links and show hamburger */
-@media (max-width: 880px){
+@media (max-width: 1024px){
   .nav-links.premium-nav-links{
     display: none;
   }

@@ -8,6 +8,7 @@ import logo from "../assets/logos/School-logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
+  { to: "/countdown", label: "Live Countdown " },
   { to: "/why-sports-day", label: "Why We Celebrate Sports Day" },
   { to: "/wall-of-fame", label: "Hall of Fame" },
   { to: "/whats-new", label: "What's New" },
