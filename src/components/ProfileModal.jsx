@@ -42,7 +42,7 @@ export default function ProfileModal({ open, profile, onClose }) {
             <div className="modal-media"><img src={profile.imgSrc} alt={profile.name} /></div>
           ) : null}
           <p id="modal-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae risus quis massa convallis facilisis. For now this is a placeholder biography — replace with a real bio when ready.
+            {profile.bio || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae risus quis massa convallis facilisis. For now this is a placeholder biography — replace with a real bio when ready."}
           </p>
         </div>
       </div>

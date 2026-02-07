@@ -21,12 +21,36 @@ export default function About() {
   };
 
   const profiles = [
-    { title: "Chairman", name: "Dr.Lavu Rathaiah Garu", img: "dr-lavu.jpg" },
-    { title: "Vice-Chairperson", name: "Mrs.L.Rani Rudrama Dev", img: "mrs-rani.jpg" },
-    { title: "Executive Director", name: "Dr.A.Sandeep Kranthi kiran", img: "dr-sandeep.jpg" },
-    { title: "Principal", name: "Smt.S.Vandana", img: "smt-vandana.jpg" },
-    { title: "Vice-Principal", name: "Ms.Ramya Sree",
-       img: "ms-ramya.jpg" },
+    { 
+      title: "Chairman", 
+      name: "Dr.Lavu Rathaiah Garu", 
+      img: "dr-lavu.jpg",
+      bio: "Chairman – Vignan Group\nThe Chairman of the Vignan Group is a visionary leader committed to excellence in education and institutional development. Under their guidance, Vignan has grown into a respected educational organization focused on academic quality, innovation, and holistic student growth."
+    },
+    { 
+      title: "Vice-Chairperson", 
+      name: "Mrs.L.Rani Rudrama Dev", 
+      img: "mrs-rani.jpg",
+      bio: "Vice-Chairperson – Rani Rudrama Devi\nRani Rudrama Devi, Vice-Chairperson of the Vignan Group, plays a key role in shaping the institution's academic and cultural vision. With a strong focus on student empowerment and values-based education, she actively supports initiatives that promote discipline, leadership, and overall development."
+    },
+    { 
+      title: "Executive Director", 
+      name: "Dr.A.Sandeep Kranthi kiran", 
+      img: "dr-sandeep.jpg",
+      bio: "Dr. A. Sandeep Kranthi Kiran is a dedicated academic leader known for his commitment to excellence in education and institutional development. With a strong focus on academic quality, innovation, and student-centric learning, he plays an important role in fostering a culture of discipline, research, and holistic growth within the institution."
+    },
+    { 
+      title: "Principal", 
+      name: "Smt.S.Vandana", 
+      img: "smt-vandana.jpg",
+      bio: "Ms. S. Vandana is an accomplished Principal recognized for her strong leadership, administrative expertise, and commitment to academic excellence. She effectively guides faculty and students, fosters a disciplined and nurturing learning environment, and plays a vital role in driving institutional growth and holistic student development."
+    },
+    { 
+      title: "Vice-Principal", 
+      name: "Ms.Ramya Sree",
+      img: "ms-ramya.jpg",
+      bio: "Ms. Ramya Shree is a dedicated Vice Principal known for her strong administrative skills and student-centric approach. She actively supports academic planning, faculty coordination, and discipline management, while fostering a positive and inclusive learning environment that encourages both academic excellence and personal growth."
+    },
   ];
 
   const pdfs = [
