@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import PageContainer from "../components/PageContainer";
 import ScrollReveal from "../components/ScrollReveal";
 import ProfileModal from "../components/ProfileModal";
@@ -31,7 +32,7 @@ export default function About() {
       title: "Vice-Chairperson", 
       name: "Mrs.L.Rani Rudrama Dev", 
       img: "mrs-rani.jpg",
-      bio: "Vice-Chairperson – Rani Rudrama Devi\nRani Rudrama Devi, Vice-Chairperson of the Vignan Group, plays a key role in shaping the institution's academic and cultural vision. With a strong focus on student empowerment and values-based education, she actively supports initiatives that promote discipline, leadership, and overall development."
+      bio: "Vice-Chairperson – Rani Rudrama Devi, Vice-Chairperson of the Vignan Group, plays a key role in shaping the institution's academic and cultural vision. With a strong focus on student empowerment and values-based education, she actively supports initiatives that promote discipline, leadership, and overall development."
     },
     { 
       title: "Executive Director", 
@@ -55,12 +56,20 @@ export default function About() {
 
   const pdfs = [
     {
-      name: "School Magazine — Issue 1 (Flipbook preview)",
-      url: "https://heyzine.com/flip-book/f73db49303.html"
+      name: "School Magazine — 1st Edition ",
+      url: "https://heyzine.com/flip-book/3946ed3abd.html"
     },
     {
-      name: "School Magazine — Issue 2 (Flipbook preview)",
-      url: "https://heyzine.com/flip-book/f73db49303.html"
+      name: "School Magazine — 2nd Edition ",
+      url: "https://heyzine.com/flip-book/61fe4c7d91.html"
+    },
+    {
+      name: "School Magazine — 3rd Edition",
+      url: "https://heyzine.com/flip-book/c068810336.html"
+    },
+    {
+      name: "School Magazine — 4th Edition",
+      url: "https://heyzine.com/flip-book/50730f3fcf.html"
     }
   ];
 
@@ -149,6 +158,21 @@ export default function About() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Footer with social media links and copyright */}
+          <footer className="about-footer">
+            <div className="social-media-links">
+              <a href="https://www.instagram.com/worldoneschool_kondapur/" target="_blank" rel="noopener noreferrer" className="social-btn">📸 Instagram</a>
+              <a href="https://www.facebook.com/WorldOneSchoolKondapur/" target="_blank" rel="noopener noreferrer" className="social-btn">📘 Facebook</a>
+              <a href="https://www.youtube.com/@WorldOneSchoolKondapur" target="_blank" rel="noopener noreferrer" className="social-btn">📺 YouTube</a>
+            </div>
+            <div className="additional-links">
+              <NavLink to="/promotional-reels" className="social-btn">🎥 Promotional Reels</NavLink>
+            </div>
+            <div className="copyright">
+              © 2023 Vignan School. All rights reserved.
+            </div>
+          </footer>
         </section>
 
         <ProfileModal

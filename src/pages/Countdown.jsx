@@ -1,23 +1,43 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 import "../pages/Countdown.css";
 
-const CountdownUnit = React.memo(({ value, label }) => (
-  <div className="countdown-unit">
-    <div className="countdown-box">
-      <motion.div
-        className="countdown-value"
-        key={value}
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        {String(value).padStart(2, "0")}
-      </motion.div>
+const CountdownUnit = ({ value, label }) => {
+  const [animatedValue, setAnimatedValue] = useState(value);
+
+  useEffect(() => {
+    if (animatedValue !== value) {
+      const diff = value - animatedValue;
+      const step = diff > 0 ? 1 : -1;
+      const timer = setInterval(() => {
+        setAnimatedValue(prev => {
+          const newVal = prev + step;
+          if ((step > 0 && newVal >= value) || (step < 0 && newVal <= value)) {
+            clearInterval(timer);
+            return value;
+          }
+          return newVal;
+        });
+      }, 30);
+      return () => clearInterval(timer);
+    }
+  }, [value]);
+
+  return (
+    <div className="countdown-unit">
+      <div className="countdown-box">
+        <motion.div
+          className="countdown-value"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 0.3 }}
+        >
+          {String(animatedValue).padStart(2, "0")}
+        </motion.div>
+      </div>
+      <div className="countdown-label">{label}</div>
     </div>
-    <div className="countdown-label">{label}</div>
-  </div>
-));
+  );
+};
 
 CountdownUnit.displayName = "CountdownUnit";
 
@@ -31,32 +51,32 @@ export default function Countdown() {
   const [isEventDay, setIsEventDay] = useState(false);
   const [showSurprise, setShowSurprise] = useState(false);
 
+  const calculateTimeLeft = useCallback(() => {
+    // Sports Fest 2026 is on Feb 13, 2026 at 12:00 PM
+    const eventDate = new Date(2026, 1, 13, 12, 0, 0).getTime();
+    const now = new Date().getTime();
+    const difference = eventDate - now;
+
+    if (difference <= 0) {
+      setIsEventDay(true);
+      setShowSurprise(true);
+      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    } else {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+      setIsEventDay(false);
+    }
+  }, []);
+
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      // Sports Fest 2026 is on Feb 13, 2026
-      const eventDate = new Date(2026, 1, 13, 0, 0, 0).getTime();
-      const now = new Date().getTime();
-      const difference = eventDate - now;
-
-      if (difference <= 0) {
-        setIsEventDay(true);
-        setShowSurprise(true);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-        setIsEventDay(false);
-      }
-    };
-
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   const sportEmojis = ["⚽", "🏀", "🎾", "🏐", "🏒", "🏑", "🏏", "🥌"];
 

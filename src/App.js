@@ -13,6 +13,7 @@ import WallOfFame from "./pages/WallOfFame";
 import WhatsNew from "./pages/WhatsNew";
 import BehindTheScenes from "./pages/BehindTheScenes";
 import About from "./pages/About";
+import PromotionalReels from "./pages/PromotionalReels";
 import "./App.css";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/whats-new" element={<WhatsNew />} />
           <Route path="/behind-the-scenes" element={<BehindTheScenes />} />
           <Route path="/about" element={<About />} />
+          <Route path="/promotional-reels" element={<PromotionalReels />} />
         </Routes>
       </AnimatePresence>
     </Layout>

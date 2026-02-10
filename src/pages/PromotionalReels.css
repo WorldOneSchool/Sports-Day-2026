@@ -1,0 +1,162 @@
+.promotional-reels-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* make the bg cover the whole viewport (not limited to the centered container) */
+.promotional-reels-page .page-bg {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* cover screen, blur & dim like other pages */
+.promotional-reels-page .page-bg img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(2px) brightness(1);
+  transform: scale(1.03);
+  display: block;
+}
+
+/* subtle dark overlay */
+.promotional-reels-page .page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
+.content-page {
+  position: relative;
+  z-index: 1;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reels-section {
+  margin-top: 40px;
+}
+
+.reels-section h3 {
+  font-size: 36px;
+  color: var(--text-light, #fff);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* responsive grid */
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+@media (max-width: 1000px) {
+  .reels-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .reels-grid { grid-template-columns: 1fr; }
+}
+
+.reel-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+  transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+  transform-origin: center;
+}
+
+.reel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.65);
+}
+
+.reel-media {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background: #0b4f52;
+}
+
+.reel-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.reel-body {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.reel-body h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.reel-body p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* small entrance animation if ScrollReveal is not active */
+.reel-card { opacity: 0; transform: translateY(12px); animation: cardIn .6s cubic-bezier(.2,.9,.2,1) forwards; }
+.reel-card:nth-child(1){ animation-delay: .06s; }
+.reel-card:nth-child(2){ animation-delay: .12s; }
+.reel-card:nth-child(3){ animation-delay: .18s; }
+@keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+
+.school-info {
+  margin-top: 50px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}

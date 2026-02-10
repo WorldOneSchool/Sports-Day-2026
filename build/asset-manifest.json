@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sports-Day-2026/static/css/main.a391f035.css",
-    "main.js": "/Sports-Day-2026/static/js/main.3d75b233.js",
+    "main.css": "/Sports-Day-2026/static/css/main.36eeff4c.css",
+    "main.js": "/Sports-Day-2026/static/js/main.bdaeffd2.js",
     "static/media/ms-ramya.jpg": "/Sports-Day-2026/static/media/ms-ramya.7d053e33ff32628c6f32.jpg",
     "static/media/about.png": "/Sports-Day-2026/static/media/about.dfe5f25f4145bc54f3df.png",
     "static/media/GOPR3995.jpg": "/Sports-Day-2026/static/media/GOPR3995.a4ae9858d83f0da89eec.jpg",
@@ -25,11 +25,11 @@
     "static/media/School-logo.png": "/Sports-Day-2026/static/media/School-logo.df2d39fc8135328f9f4f.png",
     "static/media/dr-sandeep.jpg": "/Sports-Day-2026/static/media/dr-sandeep.aece2bcd573aa8c5337b.jpg",
     "index.html": "/Sports-Day-2026/index.html",
-    "main.a391f035.css.map": "/Sports-Day-2026/static/css/main.a391f035.css.map",
-    "main.3d75b233.js.map": "/Sports-Day-2026/static/js/main.3d75b233.js.map"
+    "main.36eeff4c.css.map": "/Sports-Day-2026/static/css/main.36eeff4c.css.map",
+    "main.bdaeffd2.js.map": "/Sports-Day-2026/static/js/main.bdaeffd2.js.map"
   },
   "entrypoints": [
-    "static/css/main.a391f035.css",
-    "static/js/main.3d75b233.js"
+    "static/css/main.36eeff4c.css",
+    "static/js/main.bdaeffd2.js"
   ]
 }

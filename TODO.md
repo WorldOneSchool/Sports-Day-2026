@@ -1,5 +1,3 @@
-# TODO: Remove Black Shadows and Rectangle Behind Text in BehindTheScenes
-
-- [x] Remove black gradient background from .video-overlay in src/index.css
-- [x] Change play button circle fill to transparent or white for crystal clear look
-- [x] Remove box-shadow from .video-card if it's the "black shadows"
+- [x] Remove the school-info section from src/pages/PromotionalReels.jsx
+- [x] Update src/pages/PromotionalReels.css for glassy UI: change .reel-body background to glassy (rgba white with backdrop-filter blur), adjust text colors to dark for contrast, and update .page-subtitle and other text for glassy feel
+- [ ] Make video cards darker and longer: increase .reel-media height to 400px and change background to darker shade
