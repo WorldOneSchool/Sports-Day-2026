@@ -89,17 +89,22 @@
 }
 
 .reel-media {
-  height: 300px;
+  /* Reels are vertical; use a tall aspect ratio to display full content */
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  max-height: 720px;
   overflow: hidden;
   position: relative;
   background: #0b4f52;
 }
 
-.reel-iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
+/* blockquote/embed from Instagram will size to the container */
+.reel-media .instagram-media,
+.reel-media iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block !important;
 }
 
 .reel-body {

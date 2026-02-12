@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageContainer from "../components/PageContainer";
 import ScrollReveal from "../components/ScrollReveal";
 import behindImg from "../assets/behind.png";
@@ -8,20 +8,45 @@ export default function PromotionalReels() {
   const reels = [
     {
       id: 1,
-      url: "https://www.instagram.com/p/DUZ8pwMAHE3/embed",
+      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
       title: "Sports Fest 2026 Teaser",
     },
     {
       id: 2,
-      url: "https://www.instagram.com/p/DUZ8pwMAHE3/embed",
+      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
       title: "Behind the Scenes Prep",
     },
     {
       id: 3,
-      url: "https://www.instagram.com/p/DUZ8pwMAHE3/embed",
+      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
       title: "Athletes in Action",
     },
   ];
+
+  useEffect(() => {
+    const scriptSrc = "https://www.instagram.com/embed.js";
+    const runProcess = () => {
+      try {
+        if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === "function") {
+          window.instgrm.Embeds.process();
+        }
+      } catch (e) {
+        // ignore
+      }
+    };
+
+    const existing = document.querySelector(`script[src="${scriptSrc}"]`);
+    if (existing) {
+      runProcess();
+      return;
+    }
+
+    const s = document.createElement("script");
+    s.src = scriptSrc;
+    s.async = true;
+    s.onload = runProcess;
+    document.body.appendChild(s);
+  }, []);
 
   return (
     <PageContainer>
@@ -53,15 +78,14 @@ export default function PromotionalReels() {
                 <ScrollReveal key={reel.id} delay={i * 0.1}>
                   <article className="reel-card">
                     <div className="reel-media">
-                      <iframe
-                        src={reel.url}
-                        title={reel.title}
-                        className="reel-iframe"
-                        frameBorder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        allowFullScreen
-                        loading="lazy"
-                      />
+                      <blockquote
+                        className="instagram-media"
+                        data-instgrm-permalink={reel.permalink}
+                        data-instgrm-version="14"
+                        style={{ margin: "0" }}
+                      >
+                        <a href={reel.permalink}>{reel.title}</a>
+                      </blockquote>
                     </div>
                     <div className="reel-body">
                       <h4>{reel.title}</h4>

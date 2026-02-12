@@ -18,9 +18,17 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  /* avoid heavy filters until the image is decoded and painted */
+  filter: none;
+  transform: none;
+  display: block;
+  transition: filter .36s ease, transform .36s ease;
+}
+
+/* apply the visual treatment only after the image has loaded */
+.about-page .page-bg img.loaded {
   filter: blur(2px) brightness(1);
   transform: scale(1.03);
-  display: block;
 }
 
 /* subtle dark overlay */

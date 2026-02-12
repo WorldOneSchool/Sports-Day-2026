@@ -77,7 +77,14 @@ export default function About() {
     <PageContainer>
       <div className="about-page">
         <div className="page-bg" aria-hidden="true">
-          <img src={aboutImg} alt="" />
+          <img
+            src={aboutImg}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="bg-img"
+            onLoad={(e) => e.currentTarget.classList.add("loaded")}
+          />
         </div>
 
         <section className="content-page">
@@ -166,11 +173,8 @@ export default function About() {
               <a href="https://www.facebook.com/WorldOneSchoolKondapur/" target="_blank" rel="noopener noreferrer" className="social-btn">📘 Facebook</a>
               <a href="https://www.youtube.com/@WorldOneSchoolKondapur" target="_blank" rel="noopener noreferrer" className="social-btn">📺 YouTube</a>
             </div>
-            <div className="additional-links">
-              <NavLink to="/promotional-reels" className="social-btn">🎥 Promotional Reels</NavLink>
-            </div>
             <div className="copyright">
-              © 2023 Vignan School. All rights reserved.
+              © 2026 Vignan School. Created by Prajwal, Srinikesh and Anish.
             </div>
           </footer>
         </section>

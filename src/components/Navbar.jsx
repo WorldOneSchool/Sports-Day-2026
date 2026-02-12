@@ -13,8 +13,8 @@ const navLinks = [
   { to: "/wall-of-fame", label: "Hall of Fame" },
   { to: "/whats-new", label: "What's New" },
   { to: "/behind-the-scenes", label: "Behind the Scenes" },
-  { to: "/about", label: "About Our School" },
   { to: "/promotional-reels", label: "Promotional Reels" },
+  { to: "/about", label: "About Our School" },
 ];
 
 export default function Navbar() {

@@ -1,0 +1,66 @@
+.behind-scenes-page {
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+}
+
+/* background image container */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-bg img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: none; /* apply heavy filters only after load */
+  transform: none;
+  display: block;
+  transition: filter .36s ease, transform .36s ease;
+}
+
+.page-bg img.loaded {
+  filter: blur(2px) brightness(1);
+  transform: scale(1.03);
+}
+
+/* thumbnails grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+@media (max-width: 1000px) {
+  .video-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .video-grid { grid-template-columns: 1fr; }
+}
+
+.video-card {
+  background: transparent;
+  padding: 0; /* make image fill the card edge-to-edge */
+  border-radius: 12px;
+  overflow: hidden; /* ensure rounded corners clip the image */
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.thumb-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0; /* rounded corners are on the card now */
+  display: block;
+}
+
+.video-info { padding: 12px; background: rgba(255,255,255,0.02); border-radius: 0 0 12px 12px; }
+
+.video-info h4 { margin: 10px 0 6px 0; }
+.video-info p { margin: 0; }

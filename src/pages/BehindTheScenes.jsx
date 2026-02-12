@@ -2,6 +2,7 @@ import React from "react";
 import PageContainer from "../components/PageContainer";
 import ScrollReveal from "../components/ScrollReveal";
 import behindImg from "../assets/behind.png";
+import "./BehindTheScenes.css";
 import photo1 from "../assets/Behind/GOPR3944.jpg";
 import photo2 from "../assets/Behind/GOPR3945.jpg";
 import photo3 from "../assets/Behind/GOPR3985.jpg";
@@ -20,18 +21,16 @@ export default function BehindTheScenes() {
 
   return (
     <PageContainer>
-      <div
-        aria-hidden="true"
-        style={{
-          position: "fixed",
-          inset: 0,
-          backgroundImage: `url(${behindImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          zIndex: -1,
-        }}
-      />
+      <div className="page-bg" aria-hidden="true">
+        <img
+          src={behindImg}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="bg-img"
+          onLoad={(e) => e.currentTarget.classList.add("loaded")}
+        />
+      </div>
 
       <section className="behind-scenes-page">
         <ScrollReveal>
@@ -54,10 +53,12 @@ export default function BehindTheScenes() {
             {photos.map((photo, i) => (
               <div key={i} className="video-card">
                 <div className="video-thumbnail">
-                  <img 
-                    src={photo} 
-                    alt={`Behind the scenes photo ${i + 1}`} 
-                    style={{ width: "100%", height: "240px", objectFit: "cover", borderRadius: "8px", display: "block" }} 
+                  <img
+                    src={photo}
+                    alt={`Behind the scenes photo ${i + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="thumb-img"
                   />
                 </div>
                 <div className="video-info">
