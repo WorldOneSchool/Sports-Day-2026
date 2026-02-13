@@ -8,17 +8,17 @@ export default function PromotionalReels() {
   const reels = [
     {
       id: 1,
-      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
-      title: "Sports Fest 2026 Teaser",
+      permalink: "https://www.instagram.com/p/DUp_HYXEbC8/",
+      title: "Sports Fest 2026 ",
     },
     {
       id: 2,
-      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
-      title: "Behind the Scenes Prep",
+      permalink: "https://www.instagram.com/p/DUpXqr8AA1Z/",
+      title: "Sports Fest 2026 Teaser",
     },
     {
       id: 3,
-      permalink: "https://www.instagram.com/p/DUZ8pwMAHE3/",
+      permalink: "https://www.instagram.com/p/DUp0VPsjzll/",
       title: "Athletes in Action",
     },
   ];
